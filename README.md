@@ -549,6 +549,6 @@ export default {
 
 # **Database Output**
 
-![Screenshot 2023-03-21 at 16.17.28.png](Documentation%20c27fe7103cd54a048687fc07faf0d704/Screenshot_2023-03-21_at_16.17.28.png)
+![Screenshot 2023-03-21 at 16.17.28.png](DatabaseOutput.png)
 
 [GitHub - Mr-R-b0t/reimagined-rotary-phone](https://github.com/Mr-R-b0t/reimagined-rotary-phone.git)
