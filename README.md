@@ -1,9 +1,5 @@
 # Documentation
 
-Completed: No
-Course: https://www.notion.so/Web-Advance-Programming-e56983834905484ab93651046ddb4ba2
-Due date: March 21, 2023
-Type: Exam
 
 This is a documentation file including code for a server and client side of a web application. The server-side code includes configurations for the database, models for the database tables, and routes and controllers for the server. The client-side code includes the routing for the web application along with the code for displaying the app's header and sidebar.
 
