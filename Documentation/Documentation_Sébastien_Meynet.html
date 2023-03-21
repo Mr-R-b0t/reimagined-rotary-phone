@@ -1,0 +1,1154 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Documentation</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="c27fe710-3cd5-4a04-8687-fc07faf0d704" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/nasa_fingerprints_of_water_on_the_sand.jpg" style="object-position:center 60%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">💊</span></div><h1 class="page-title">Documentation</h1><table class="properties"><tbody><tr class="property-row property-row-select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM7.62402 10.6348C7.79492 10.915 8.20508 10.9287 8.37598 10.6348L10.666 6.73145C10.8574 6.41016 10.7002 6.04102 10.3652 6.04102H5.62793C5.29297 6.04102 5.14941 6.43066 5.32031 6.73145L7.62402 10.6348Z"></path></svg></span>Type</th><td><span class="selected-value select-value-color-yellow">Exam</span></td></tr><tr class="property-row property-row-checkbox"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCheckbox"><path d="M3.85742 14.4561H12.1357C13.6123 14.4561 14.3779 13.6904 14.3779 12.2344V3.91504C14.3779 2.45215 13.6123 1.69336 12.1357 1.69336H3.85742C2.38086 1.69336 1.61523 2.45215 1.61523 3.91504V12.2344C1.61523 13.6973 2.38086 14.4561 3.85742 14.4561ZM3.93945 13.1162C3.30371 13.1162 2.95508 12.7812 2.95508 12.1182V4.02441C2.95508 3.36133 3.30371 3.0332 3.93945 3.0332H12.0537C12.6826 3.0332 13.0381 3.36133 13.0381 4.02441V12.1182C13.0381 12.7812 12.6826 13.1162 12.0537 13.1162H3.93945ZM7.26855 11.3115C7.51465 11.3115 7.72656 11.1885 7.87012 10.9697L10.9258 6.19141C11.0146 6.04785 11.0967 5.88379 11.0967 5.72656C11.0967 5.3916 10.7959 5.16602 10.4746 5.16602C10.2695 5.16602 10.085 5.27539 9.94141 5.50781L7.24121 9.8418L5.96973 8.22168C5.80566 8.00977 5.6416 7.93457 5.43652 7.93457C5.10156 7.93457 4.8418 8.20117 4.8418 8.54297C4.8418 8.70703 4.90332 8.85742 5.01953 9.00098L6.63281 10.9697C6.81738 11.209 7.01562 11.3115 7.26855 11.3115Z"></path></svg></span>Completed</th><td><div class="checkbox checkbox-off"></div></td></tr><tr class="property-row property-row-relation"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesRelation"><path d="M13.1475 10.5869V3.72363C13.1475 3.25195 12.833 2.93066 12.3477 2.93066H5.48438C5.02637 2.93066 4.70508 3.27246 4.70508 3.67578C4.70508 4.07227 5.05371 4.40039 5.46387 4.40039H7.89746L10.8438 4.30469L9.59961 5.39844L3.08496 11.9199C2.92773 12.0771 2.8457 12.2686 2.8457 12.46C2.8457 12.8564 3.20801 13.2256 3.61816 13.2256C3.80957 13.2256 3.99414 13.1504 4.15137 12.9932L10.6729 6.47168L11.7803 5.22754L11.6641 8.05762V10.6074C11.6641 11.0176 11.9922 11.373 12.4023 11.373C12.8057 11.373 13.1475 11.0312 13.1475 10.5869Z"></path></svg></span>Course</th><td><a href="https://www.notion.so/Web-Advance-Programming-e56983834905484ab93651046ddb4ba2"><span class="icon">🔬</span>Web Advance Programming</a></td></tr><tr class="property-row property-row-date"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesDate"><path d="M3.29688 14.4561H12.7031C14.1797 14.4561 14.9453 13.6904 14.9453 12.2344V3.91504C14.9453 2.45215 14.1797 1.69336 12.7031 1.69336H3.29688C1.82031 1.69336 1.05469 2.45215 1.05469 3.91504V12.2344C1.05469 13.6973 1.82031 14.4561 3.29688 14.4561ZM3.27637 13.1162C2.70898 13.1162 2.39453 12.8154 2.39453 12.2207V5.9043C2.39453 5.30273 2.70898 5.00879 3.27637 5.00879H12.71C13.2842 5.00879 13.6055 5.30273 13.6055 5.9043V12.2207C13.6055 12.8154 13.2842 13.1162 12.71 13.1162H3.27637ZM6.68066 7.38086H7.08398C7.33008 7.38086 7.41211 7.30566 7.41211 7.05957V6.66309C7.41211 6.41699 7.33008 6.3418 7.08398 6.3418H6.68066C6.44141 6.3418 6.35938 6.41699 6.35938 6.66309V7.05957C6.35938 7.30566 6.44141 7.38086 6.68066 7.38086ZM8.92285 7.38086H9.31934C9.56543 7.38086 9.64746 7.30566 9.64746 7.05957V6.66309C9.64746 6.41699 9.56543 6.3418 9.31934 6.3418H8.92285C8.67676 6.3418 8.59473 6.41699 8.59473 6.66309V7.05957C8.59473 7.30566 8.67676 7.38086 8.92285 7.38086ZM11.1582 7.38086H11.5547C11.8008 7.38086 11.8828 7.30566 11.8828 7.05957V6.66309C11.8828 6.41699 11.8008 6.3418 11.5547 6.3418H11.1582C10.9121 6.3418 10.8301 6.41699 10.8301 6.66309V7.05957C10.8301 7.30566 10.9121 7.38086 11.1582 7.38086ZM4.44531 9.58203H4.84863C5.09473 9.58203 5.17676 9.50684 5.17676 9.26074V8.86426C5.17676 8.61816 5.09473 8.54297 4.84863 8.54297H4.44531C4.20605 8.54297 4.12402 8.61816 4.12402 8.86426V9.26074C4.12402 9.50684 4.20605 9.58203 4.44531 9.58203ZM6.68066 9.58203H7.08398C7.33008 9.58203 7.41211 9.50684 7.41211 9.26074V8.86426C7.41211 8.61816 7.33008 8.54297 7.08398 8.54297H6.68066C6.44141 8.54297 6.35938 8.61816 6.35938 8.86426V9.26074C6.35938 9.50684 6.44141 9.58203 6.68066 9.58203ZM8.92285 9.58203H9.31934C9.56543 9.58203 9.64746 9.50684 9.64746 9.26074V8.86426C9.64746 8.61816 9.56543 8.54297 9.31934 8.54297H8.92285C8.67676 8.54297 8.59473 8.61816 8.59473 8.86426V9.26074C8.59473 9.50684 8.67676 9.58203 8.92285 9.58203ZM11.1582 9.58203H11.5547C11.8008 9.58203 11.8828 9.50684 11.8828 9.26074V8.86426C11.8828 8.61816 11.8008 8.54297 11.5547 8.54297H11.1582C10.9121 8.54297 10.8301 8.61816 10.8301 8.86426V9.26074C10.8301 9.50684 10.9121 9.58203 11.1582 9.58203ZM4.44531 11.7832H4.84863C5.09473 11.7832 5.17676 11.708 5.17676 11.4619V11.0654C5.17676 10.8193 5.09473 10.7441 4.84863 10.7441H4.44531C4.20605 10.7441 4.12402 10.8193 4.12402 11.0654V11.4619C4.12402 11.708 4.20605 11.7832 4.44531 11.7832ZM6.68066 11.7832H7.08398C7.33008 11.7832 7.41211 11.708 7.41211 11.4619V11.0654C7.41211 10.8193 7.33008 10.7441 7.08398 10.7441H6.68066C6.44141 10.7441 6.35938 10.8193 6.35938 11.0654V11.4619C6.35938 11.708 6.44141 11.7832 6.68066 11.7832ZM8.92285 11.7832H9.31934C9.56543 11.7832 9.64746 11.708 9.64746 11.4619V11.0654C9.64746 10.8193 9.56543 10.7441 9.31934 10.7441H8.92285C8.67676 10.7441 8.59473 10.8193 8.59473 11.0654V11.4619C8.59473 11.708 8.67676 11.7832 8.92285 11.7832Z"></path></svg></span>Due date</th><td><time>@March 21, 2023</time></td></tr></tbody></table></header><div class="page-body"><p id="cf181554-ed49-4a0b-98c0-d2e8fab73004" class="">This is a documentation file including code for a server and client side of a web application. The server-side code includes configurations for the database, models for the database tables, and routes and controllers for the server. The client-side code includes the routing for the web application along with the code for displaying the app&#x27;s header and sidebar.</p><p id="56c3049d-0e43-4f66-a988-86534b4dc7bd" class="">The server-side code is written in Node.js using the Sequelize ORM to interact with the MySQL database. The client-side code is written in Vue.js.</p><p id="4e13f612-c464-4d01-9c96-6b674da351dd" class="">The server-side code defines the configuration file for the database and models for the &quot;products&quot; and &quot;checkout&quot; tables. It also defines the routes and controllers for the &quot;checkout&quot; table.</p><p id="28e6a0a1-0e88-44ed-bf8e-7167f6b598a4" class="">The client-side code defines the routing for the web application and the components for displaying the header and sidebar. It also includes code for interacting with the server-side API for retrieving product data and user authentication.</p><p id="b133043d-6144-4ef7-9a3c-9781f2934778" class="">The code above is not complete and may be missing some parts. It is intended as an example only.</p><h1 id="bdd966fd-fc9b-4055-9cfa-ddef620aa546" class=""><mark class="highlight-red"><span style="border-bottom:0.05em solid"><em><strong>Part 1 : Server side</strong></em></span></mark></h1><h1 id="4c7a6ce6-4fa4-4b4f-a8e4-d7be13efcfd6" class="">./server/app/config/db.config.js</h1><pre id="16695504-b238-4a94-9f34-ba8a8788f70d" class="code"><code>module.exports = {
+    HOST: &#x27;box.toxicsed.fr&#x27;,
+    PORT:&#x27;49158&#x27;,
+    USER: &#x27;root&#x27;,
+    PASSWORD: &#x27;123Soleil&#x27;,
+    DB: &#x27;db_product&#x27;,
+    dialect: &#x27;mysql&#x27;
+}</code></pre><h1 id="feadf35e-b0cb-490a-a0d0-0251800191f4" class="">./server/app/model/index.js</h1><pre id="e7c470c6-c9b1-4ea6-9b6e-e5ab3b4b9eb5" class="code"><code>const dbConfig = require(&#x27;../config/db.config.js&#x27;)
+const Sequelize = require(&#x27;sequelize&#x27;)
+const connex = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
+    host:dbConfig.HOST,
+    dialect:dbConfig.dialect,
+    port: 49158,
+    operatorAliases: false
+})
+const db = {}
+db.Sequelize = Sequelize
+db.connex = connex
+db.products = require(&#x27;./product.model.js&#x27;)(connex, Sequelize)
+db.checkout = require(&#x27;./checkout.model.js&#x27;)(connex, Sequelize)
+db.users = require(&#x27;./user.model.js&#x27;)(connex, Sequelize)
+module.exports = db</code></pre><p id="e692e8a5-0aca-452e-84a6-479cc2ba71ef" class="">
+</p><h1 id="7d8bea5d-6c54-40dd-bc31-e8a5d6f699e7" class="">./server/app/model/checkout.model.js</h1><pre id="be4a33bb-c18f-4713-bcf7-90a46379a761" class="code"><code>module.exports = (connex, Sequelize) =&gt; {
+  const checkout = connex.define(&quot;checkout&quot;, {
+    name: {
+      type: Sequelize.STRING,
+    },
+    adress: {
+      type: Sequelize.STRING,
+    },
+    city: {
+      type: Sequelize.STRING,
+    },
+    date: {
+      type: Sequelize.DATE,
+    },
+  });
+  return checkout;
+};</code></pre><p id="843d30cc-9f6e-47db-be9a-ef0aca5fb919" class="">
+</p><h1 id="1919a3ac-fc4c-4530-b15e-a3327cd987f0" class="">./server/app/controller/checkout.controller.js</h1><pre id="0de88940-11f8-4468-991a-28b3e60f707f" class="code"><code>const db = require(&quot;../models&quot;);
+const CheckOut = db.checkout;
+const OP = db.Sequelize.Op;
+
+exports.findAll = (req, res) =&gt; {
+  CheckOut.findAll().then((data) =&gt; {
+    res.send(data);
+  });
+};
+
+exports.create = (req, res) =&gt; {
+  console.log(req.body)
+  CheckOut.create(req.body)
+    .then((data) =&gt; {
+      res.send(data);
+    })
+    .catch((e) =&gt; {
+      res.status(500).send({
+        message: &quot;Could not insert into the table&quot;,
+      });
+    });
+};
+
+exports.findOne = (req, res) =&gt; {
+  const id = req.params.id;
+  CheckOut.findByPk(id)
+    .then((data) =&gt; {
+      res.send(data);
+    })
+    .catch((e) =&gt; {
+      res.status(500).send({
+        message: &quot;Could not find the data&quot;,
+      });
+    });
+};
+
+exports.delete = (req, res) =&gt; {
+  const id = req.params.id;
+  CheckOut.destroy({
+    where: { id: id },
+  })
+    .then((num) =&gt; {
+      if (num == 1) {
+        res.send({
+          message: &quot;CheckOut was deleted&quot;,
+        });
+      } else {
+        res.send({
+          message: &quot;Could not delete&quot;,
+        });
+      }
+    })
+    .catch((e) =&gt; {
+      res.status(500).send({
+        message: &quot;Database error&quot;,
+      });
+    });
+};
+
+exports.update = (req, res) =&gt; {
+  const id = req.params.id;
+  CheckOut.update(req.body, {
+    where: { id: id },
+  })
+    .then((num) =&gt; {
+      if (num == 1) {
+        res.send({
+          message: &quot;CheckOut was updatedd&quot;,
+        });
+      } else {
+        res.send({
+          message: &quot;Could not update&quot;,
+        });
+      }
+    })
+    .catch((e) =&gt; {
+      res.status(500).send({
+        message: &quot;Database error&quot;,
+      });
+    });
+};</code></pre><h1 id="0736f691-bae0-4f32-83bd-299dd4b65bf2" class="">./server/app/routes/checkout.route.js</h1><pre id="307a3017-fae1-4c2a-8cda-a182c68582ad" class="code"><code>module.exports = app =&gt; {
+    const checkout = require(&#x27;../controllers/checkout.controller.js&#x27;)
+    const router = require(&#x27;express&#x27;).Router()
+
+    router.post(&#x27;/&#x27;, checkout.create)
+    
+    router.get(&#x27;/&#x27;, checkout.findAll)
+
+    app.use(&#x27;/api/checkout&#x27;, router)
+}</code></pre><p id="e6a34b2c-90ee-4a1b-b991-325ad95507d6" class="">
+</p><p id="b3f1e653-1f3c-4c91-bcdb-5776aab6e9b3" class="">
+</p><h1 id="ae722d56-1d07-4c1d-a34a-d083fc793455" class=""><mark class="highlight-red"><span style="border-bottom:0.05em solid"><em><strong>Part 2 : Client Side</strong></em></span></mark></h1><h1 id="45af6ab6-a456-45ce-a534-dd426e883a2c" class="">./vue-client/src/router/index.js</h1><pre id="d5da4b09-5ff0-424b-b9f8-33f8cdbf6cba" class="code"><code>import { createRouter, createWebHistory } from &#x27;vue-router&#x27;
+import HomeView from &#x27;../views/HomeView.vue&#x27;
+import AboutView from &#x27;../views/AboutView.vue&#x27;
+import NewProductView from &#x27;../views/NewProductView.vue&#x27;
+import ProductView from &#x27;@/views/ProductView.vue&#x27;
+import ProductEditView from &#x27;@/views/ProductEditView.vue&#x27;
+import UserView from &#x27;@/views/UserView.vue&#x27;
+import LoginView from &#x27;@/views/LoginView.vue&#x27;
+import CheckoutView from &#x27;@/views/CheckOut.vue&#x27;
+
+const routes = [
+  {
+    path: &#x27;/&#x27;,
+    name: &#x27;home&#x27;,
+    component: HomeView
+  },
+  {
+    path: &#x27;/about&#x27;,
+    name: &#x27;about&#x27;,
+    component: AboutView
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    // component: () =&gt; import(/* webpackChunkName: &quot;about&quot; */ &#x27;../views/AboutView.vue&#x27;)
+  },
+  {
+    path: &#x27;/new-product&#x27;,
+    name: &#x27;new-product&#x27;,
+    component: NewProductView,
+    meta: {
+      isAuth: true
+    }
+  },
+  {
+    path: &#x27;/product/:id&#x27;,
+    name: &#x27;product&#x27;,
+    component: ProductView
+  },
+  {
+    path: &#x27;/product-edit/:id&#x27;,
+    name: &#x27;product-edit&#x27;,
+    component: ProductEditView
+  },
+  {
+    path: &#x27;/user&#x27;,
+    name: &#x27;user&#x27;,
+    component: UserView
+  },
+  {
+    path: &#x27;/login&#x27;,
+    name: &#x27;login&#x27;,
+    component: LoginView
+  },
+  {
+    path: &#x27;/checkout&#x27;,
+    name: &#x27;checkout&#x27;,
+    component: CheckoutView
+  }
+]
+
+const router = createRouter({
+  history: createWebHistory(process.env.BASE_URL),
+  routes
+})
+
+export default router</code></pre><p id="2f90b8fb-ea57-459b-b8c7-e44f204e9356" class="">
+</p><h1 id="e03d7940-97d7-4c97-b32d-88b6d59db214" class="">./vue-client/src/views/App.vue</h1><pre id="b91636a7-0c88-48e0-acfe-3b41c281ec5d" class="code"><code>&lt;template&gt;
+    &lt;!-- Navigation--&gt;
+    &lt;nav class=&quot;navbar navbar-expand-lg navbar-light bg-light&quot;&gt;
+        &lt;div class=&quot;container px-4 px-lg-5&quot;&gt;
+            &lt;span class=&quot;navbar-brand&quot; v-if=&quot;user&quot;&gt; Hi {{ user.fullname}}&lt;/span&gt;
+            &lt;button class=&quot;navbar-toggler&quot; type=&quot;button&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#navbarSupportedContent&quot; 
+aria-controls=&quot;navbarSupportedContent&quot; aria-expanded=&quot;false&quot; aria-label=&quot;Toggle navigation&quot;&gt;
+&lt;span class=&quot;navbar-toggler-icon&quot;&gt;&lt;/span&gt;&lt;/button&gt;
+            &lt;div class=&quot;collapse navbar-collapse&quot; id=&quot;navbarSupportedContent&quot;&gt;
+                &lt;ul class=&quot;navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4&quot;&gt;
+                    &lt;li class=&quot;nav-item&quot;&gt;&lt;router-link class=&quot;nav-link active&quot; aria-current=&quot;page&quot; to=&quot;/&quot;&gt;Home&lt;/router-link&gt;&lt;/li&gt;
+                    &lt;li class=&quot;nav-item&quot;&gt;&lt;router-link class=&quot;nav-link&quot; to=&quot;/about&quot;&gt;About&lt;/router-link&gt;&lt;/li&gt;
+                    &lt;li class=&quot;nav-item &quot; v-if=&quot;user&quot;&gt;&lt;router-link class=&quot;nav-link&quot; to=&quot;/new-product&quot;&gt;New Product&lt;/router-link&gt;&lt;/li&gt;
+                    &lt;li class=&quot;nav-item &quot; v-if=&quot;!user&quot;&gt;&lt;router-link class=&quot;nav-link&quot; to=&quot;/user&quot;&gt;Register&lt;/router-link&gt;&lt;/li&gt;
+                    &lt;li class=&quot;nav-item &quot; v-if=&quot;!user&quot;&gt;&lt;router-link class=&quot;nav-link&quot; to=&quot;/login&quot;&gt;Login&lt;/router-link&gt;&lt;/li&gt;
+                    &lt;li class=&quot;nav-item &quot; v-if=&quot;user&quot;&gt;&lt;router-link class=&quot;nav-link&quot; to=&quot;/checkout&quot;&gt;Checkout&lt;/router-link&gt;&lt;/li&gt;
+                    &lt;li class=&quot;nav-item &quot; v-if=&quot;user&quot;&gt;&lt;span class=&quot;nav-link&quot; @click=&quot;logout&quot; style=&quot;cursor:pointer&quot;&gt;Logout&lt;/span&gt;&lt;/li&gt;
+
+                &lt;/ul&gt;
+                &lt;form class=&quot;d-flex&quot;&gt;
+                    &lt;button class=&quot;btn btn-outline-dark&quot; type=&quot;button&quot; v-on:click=&quot;toggleSideBar&quot;&gt;
+                        &lt;i class=&quot;bi-cart-fill me-1&quot;&gt;&lt;/i&gt;
+                        Cart
+                        &lt;span class=&quot;badge bg-dark text-white ms-1 rounded-pill&quot;&gt; {{ totalQuantity }}&lt;/span&gt;
+                    &lt;/button&gt;
+                &lt;/form&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/nav&gt;
+    &lt;!-- Header--&gt;
+    &lt;header class=&quot;bg-dark py-5&quot;&gt;
+        &lt;div class=&quot;container px-4 px-lg-5 my-5&quot;&gt;
+            &lt;div class=&quot;text-center text-white&quot;&gt;
+                &lt;h1 class=&quot;display-4 fw-bolder&quot;&gt;Shop in style&lt;/h1&gt;
+                &lt;p class=&quot;lead fw-normal text-white-50 mb-0&quot;&gt;With this shop hompeage template&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/header&gt;
+  &lt;router-view
+  :inventory = &quot;inventory&quot;
+  :addToCart = &quot;addToCart&quot;
+  :addInv = &quot;addInventory&quot;
+  :user = &quot;user&quot;
+  :removeInv = &quot;removeInventory&quot;
+  :remove = &quot;removeItem&quot;
+  :updateInv = &quot;updateInventory&quot;
+  /&gt;
+  &lt;Sidebar
+  v-if=&quot;showSideBar&quot;
+  :toggle = &quot;toggleSideBar&quot;
+  :cart = &quot;cart&quot;
+  :inventory = &quot;inventory&quot;
+  :remove = &quot;removeItem&quot;
+  /&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import Sidebar from &#x27;./components/SideBar.vue&#x27;
+import ProductDataService from &#x27;@/services/ProductDataService&#x27;
+import UserDataService from &#x27;@/services/UserDataService&#x27;
+import { mapGetters } from &#x27;vuex&#x27;
+
+export default {
+  components: {
+    Sidebar
+  },
+  data () {
+    return {
+      showSideBar: false,
+      inventory: [],
+      cart: {}
+    }
+  },
+  methods: {
+    toggleSideBar () {
+      this.showSideBar = !this.showSideBar
+    },
+    addToCart (product, index) {
+      if (!this.cart[product]) this.cart[product] = 0
+      this.cart[product] += this.inventory[index].quantity
+      console.log(this.cart[product])
+    },
+    removeItem (name) {
+      delete this.cart[name]
+    },
+    addInventory (data) {
+      this.inventory.push(data)
+    },
+    removeInventory (index) {
+      this.inventory.splice(index, 1)
+    },
+    updateInventory (index, data) {
+      this.inventory[index].name = data.name
+      this.inventory[index].photo = data.photo
+      this.inventory[index].price = data.price
+      this.inventory[index].description = data.description
+      this.inventory[index].tyoe = data.type
+    },
+    logout () {
+      UserDataService.getLogout()
+        .then(response =&gt; {
+          localStorage.removeItem(&#x27;token&#x27;)
+          this.$store.dispatch(&#x27;user&#x27;, null)
+          this.$router.push(&#x27;login&#x27;)
+        })
+    }
+  },
+  computed: {
+    totalQuantity () {
+      return Object.values(this.cart).reduce((acc, curr) =&gt; {
+        return acc + curr
+      }, 0)
+    },
+    ...mapGetters([&#x27;user&#x27;])
+  },
+  mounted () {
+    ProductDataService.getAll()
+      .then(response =&gt; {
+        this.inventory = response.data
+      })
+  },
+  created () {
+    UserDataService.getAuth()
+      .then(response =&gt; {
+        this.name = response.data.fullname
+        this.$store.dispatch(&#x27;user&#x27;, response.data)
+      })
+      .catch(e =&gt; {
+        this.$store.dispatch(&#x27;user&#x27;, null)
+      })
+  }
+}
+&lt;/script&gt;</code></pre><p id="8e8ebd0b-1963-4c75-bee7-f34594dc2213" class="">
+</p><h1 id="d84589cd-7695-4955-909e-31253414c990" class="">./vue-client/src/view/CheckOut.vue</h1><pre id="0d501173-e8b0-40cb-a43e-e6497255c6af" class="code"><code>&lt;template&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;div class=&quot;row justify-content-center mt-5&quot;&gt;
+            &lt;div class=&quot;col-md-6&quot;&gt;
+                &lt;div v-if=&quot;message != &#x27;&#x27; &quot; class=&quot;alert alert-danger&quot;&gt;{{ message }}&lt;/div&gt;
+                &lt;h4 class=&quot;mb-3&quot;&gt;Checkout&lt;/h4&gt;
+                &lt;div&gt;
+                    &lt;div class=&quot;form-group&quot;&gt;
+                        &lt;label for=&quot;date&quot;&gt;Date&lt;/label&gt;
+                        &lt;input v-model=&quot;date&quot; type=&quot;date&quot; class=&quot;form-control mb-3&quot; id=&quot;date&quot;&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;form-group&quot;&gt;
+                        &lt;label for=&quot;fullname&quot;&gt;Name&lt;/label&gt;
+                        &lt;input v-model=&quot;fullname&quot; type=&quot;text&quot; class=&quot;form-control mb-3&quot; id=&quot;fullname&quot; placeholder=&quot;Enter name&quot;&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;form-group&quot;&gt;
+                        &lt;label for=&quot;address&quot;&gt;Address&lt;/label&gt;
+                        &lt;input v-model=&quot;address&quot;  type=&quot;text&quot; class=&quot;form-control mb-3&quot; id=&quot;address&quot; placeholder=&quot;Enter Address&quot;&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;form-group&quot;&gt;
+                        &lt;label for=&quot;city&quot;&gt;City&lt;/label&gt;
+                        &lt;select v-model=&quot;city&quot; class=&quot;form-control mb-3&quot; id=&quot;city&quot;&gt;
+                            &lt;option value=&quot;&quot;&gt;Select&lt;/option&gt;
+                            &lt;option value=&quot;Montreal&quot;&gt;Montreal&lt;/option&gt;
+                            &lt;option value=&quot;Quebec&quot;&gt;Quebec&lt;/option&gt;
+                            &lt;option value=&quot;Toronto&quot;&gt;Toronto&lt;/option&gt;
+                        &lt;/select&gt;
+                    &lt;/div&gt;
+                    &lt;button @click=&quot;save&quot; class=&quot;w-100 btn btn-secondary btn-lg mt-3 mb-3&quot; type=&quot;button&quot;&gt;Save &lt;/button&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;div v-if=&quot;alert != false &quot; class=&quot;alert alert-success alert-dismissible fade show&quot; role=&quot;alert&quot;&gt;
+                        &lt;strong&gt; Your order is being processed. Thank you !&lt;/strong&gt;
+                        &lt;button type=&quot;button&quot; class=&quot;btn-close&quot; data-bs-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;&lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;hr class=&quot;my-4&quot;&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import CheckOutDataService from &#x27;@/services/CheckOutDataService&#x27;
+export default {
+  name: &#x27;CheckOut&#x27;,
+  data () {
+    return {
+      date: &#x27;&#x27;,
+      fullname: &#x27;&#x27;,
+      address: &#x27;&#x27;,
+      city: &#x27;&#x27;,
+      message: &#x27;&#x27;,
+      alert: false
+    }
+  },
+  methods: {
+    save () {
+      if (this.date === &#x27;&#x27; || this.fullname === &#x27;&#x27; || this.address === &#x27;&#x27; || this.city === &#x27;&#x27;) {
+        this.message = &#x27;Please fill all fields&#x27;
+      } else {
+        this.message = &#x27;&#x27;
+        this.alert = true
+        CheckOutDataService.create({
+          date: this.date,
+          name: this.fullname,
+          adress: this.address,
+          city: this.city
+        })
+      }
+    }
+  }
+}
+&lt;/script&gt;</code></pre><p id="9e7de49e-3645-499d-8d84-0dfb5fa2dd4e" class="">
+</p><h1 id="058120d3-0269-4c5f-9cee-6bf547a7eb61" class="">./vue-client/src/components/SideBar.vue</h1><pre id="232e60f1-9f14-4eec-b7ff-09f075a4a3ea" class="code"><code>&lt;template&gt;
+    &lt;aside class=&quot;cart-container&quot;&gt;
+        &lt;div class=&quot;cart&quot;&gt;
+            &lt;h1 class=&quot;cart-title spread&quot;&gt;
+            &lt;span&gt;
+                Cart
+                &lt;i class=&quot;bi-cart-fill me-1&quot;&gt;&lt;/i&gt;
+            &lt;/span&gt;
+            &lt;button class=&quot;cart-close&quot; @click=&quot;toggle&quot;&gt;&amp;times;&lt;/button&gt;
+            &lt;/h1&gt;
+            &lt;div class=&quot;cart-body&quot;&gt;
+            &lt;table class=&quot;cart-table&quot;&gt;
+                &lt;thead&gt;
+                &lt;tr&gt;
+                    &lt;th&gt;&lt;span class=&quot;sr-only&quot;&gt;Product Image&lt;/span&gt;&lt;/th&gt;
+                    &lt;th&gt;Product&lt;/th&gt;
+                    &lt;th&gt;Price&lt;/th&gt;
+                    &lt;th&gt;Qty&lt;/th&gt;
+                    &lt;th&gt;Total&lt;/th&gt;
+                    &lt;th&gt;&lt;span class=&quot;sr-only&quot;&gt;Actions&lt;/span&gt;&lt;/th&gt;
+                &lt;/tr&gt;
+                &lt;/thead&gt;
+                &lt;tbody&gt;
+                &lt;tr v-for=&quot;(quantity, key, i) in cart&quot; :key=&quot;i&quot;&gt;
+                    &lt;td&gt;&lt;img :src=&quot;`${publicPath}/img/100/${getPhoto(key)}`&quot; :alt=&quot;key&quot; &gt;&lt;/td&gt;
+                    &lt;td&gt;{{ key }}&lt;/td&gt;
+                    &lt;td&gt;${{ getPrice(key) }}&lt;/td&gt;
+                    &lt;td class=&quot;center&quot;&gt;{{ quantity }}&lt;/td&gt;
+                    &lt;td&gt;${{ (quantity*getPrice(key)).toFixed(2)}}&lt;/td&gt;
+                    &lt;td class=&quot;center&quot;&gt;
+                    &lt;button class=&quot;btn btn-light cart-remove&quot; @click=&quot;remove(key)&quot;&gt;
+                        &amp;times;
+                    &lt;/button&gt;
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;/tbody&gt;
+            &lt;/table&gt;
+            &lt;p class=&quot;center&quot; v-if=&quot;!Object.keys(cart).length&quot;&gt;&lt;em&gt;No items in cart&lt;/em&gt;&lt;/p&gt;
+            &lt;div class=&quot;spread&quot;&gt;
+                &lt;span&gt;&lt;strong&gt;Total:&lt;/strong&gt; ${{ calculateTotal() }}&lt;/span&gt;
+                &lt;button @click=&quot;checkout&quot; class=&quot;btn btn-light&quot;&gt;Checkout&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/aside&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  props: [&#x27;toggle&#x27;, &#x27;cart&#x27;, &#x27;inventory&#x27;, &#x27;remove&#x27;],
+  data () {
+    return {
+      publicPath: window.location.origin
+    }
+  },
+  methods: {
+    getPrice (name) {
+      const product = this.inventory.find((p) =&gt; {
+        return p.name === name
+      })
+      return product.price.toFixed(2)
+    },
+    getPhoto (name) {
+      const product = this.inventory.find((p) =&gt; {
+        return p.name === name
+      })
+      return product.photo
+    },
+    calculateTotal () {
+      const total = Object.entries(this.cart).reduce((acc, curr) =&gt; { return acc + (curr[1] * this.getPrice(curr[0])) }, 0)
+      return total.toFixed(2)
+    },
+    checkout () {
+      this.$store.dispatch(&#x27;checkout&#x27;, this.cart)
+      this.$router.push(&#x27;/checkout&#x27;)
+    }
+  }
+}
+&lt;/script&gt;</code></pre><p id="6a310fb6-40cb-4d90-b7cc-8efa5c1926b8" class="">
+</p><p id="fa70b57a-27bb-4726-9684-105e339cf8ca" class="">
+</p><h1 id="c1a9803c-bc53-4939-8ddd-6e69bbd7048d" class=""><strong>Database Output</strong></h1><figure id="b0acc7a4-7474-45cb-9bca-464101aee981" class="image"><a href="Documentation%20c27fe7103cd54a048687fc07faf0d704/Screenshot_2023-03-21_at_16.17.28.png"><img style="width:2192px" src="Documentation%20c27fe7103cd54a048687fc07faf0d704/Screenshot_2023-03-21_at_16.17.28.png"/></a></figure><p id="5d487d74-39df-4fd6-acc8-2ef89e79ae40" class="">
+</p><figure id="04ad6b09-8907-4006-8483-c50e8110b3c7"><a href="https://github.com/Mr-R-b0t/reimagined-rotary-phone.git" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">GitHub - Mr-R-b0t/reimagined-rotary-phone</div><div class="bookmark-description">Contribute to Mr-R-b0t/reimagined-rotary-phone development by creating an account on GitHub.</div></div><div class="bookmark-href"><img src="https://github.com/fluidicon.png" class="icon bookmark-icon"/>https://github.com/Mr-R-b0t/reimagined-rotary-phone.git</div></div><img src="https://opengraph.githubassets.com/719e8a241abe3ca9d95e2c37c62d2bd9c0a7b6d25c63a52a13e8de6cbbd01e19/Mr-R-b0t/reimagined-rotary-phone" class="bookmark-image"/></a></figure><p id="2b95fecc-b8d9-423a-bc3a-f75add22d0d3" class="">
+</p></div></article></body></html>
